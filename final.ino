@@ -2,7 +2,7 @@
 SoftwareSerial sim(10, 11);
 SoftwareSerial mySerial(9, 10); //declaring pins for rfid
 String number = "+880XXXXXXXXXX"; // +880 is the country code
-char tag[3][12]={
+char tag[3][12]={};
 
 void setup() {
    mySerial.begin(9600); // Setting the baud rate of Software Serial Library

@@ -1,7 +1,7 @@
 #include <SoftwareSerial.h>
 SoftwareSerial sim(10, 11);
 
-String number = "+880XXXXXXXXXX"; // +880 is the country code
+String number = "+91XXXXXXXXXX"; // +91 is the country code
 
 void setup() {
   Serial.begin(9600);
@@ -17,10 +17,7 @@ void loop() {
   if (Serial.available() > 0)
     switch (Serial.read())
     {
-      case 'c':
-        callNumber();
-        break;
-      case 's':
+       case 's':
         SendMessage();
         break;
     }
@@ -34,15 +31,9 @@ void SendMessage()
   delay(1000);
   sim.println("AT+CMGS=\"" + number + "\"\r");
   delay(1000);
-  String SMS = "Hi Razib, How are you?";
+  String SMS = "Your ward is present today";
   sim.println(SMS);
   delay(100);
   sim.println((char)26);
   delay(1000);
-}
-
-void callNumber() {
-  sim.print (F("ATD"));
-  sim.print (number);
-  sim.print (F(";\r\n"));
 }
