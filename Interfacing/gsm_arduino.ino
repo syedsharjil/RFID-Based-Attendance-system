@@ -7,7 +7,7 @@ void setup() {
   Serial.begin(9600);
   Serial.println("Wait few seconds...");
   delay(5000);
-  Serial.println("Sistem Started...");
+  Serial.println("System Started...");
   sim.begin(9600);
   delay(1000);
   Serial.println("Type c to make a call and s to send an SMS");
